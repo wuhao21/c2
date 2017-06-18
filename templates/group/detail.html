@@ -18,7 +18,7 @@
 		<h1>Attack</h1>
 	</div>
 
-    <form action="{% url 'attack-post' 'ROOT' group.gid %}" method="post">
+    <form action="{% url 'attack-post' 'ROOT' group.gid%}" method="post">
         {% csrf_token %}
         <div class="form-group">
             <label for="name">Key</label>
@@ -34,7 +34,6 @@
             <button type="submit" name=submit class="btn btn-default">Submit</button>
         </div>
     </form>
-	<p>{{ rlt }}</p>
 </div>
 
 

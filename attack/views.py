@@ -14,7 +14,7 @@ def detail(request, aid):
         raise Http404
     return render(request, 'attack/detail.html', {'attack' : atk})
 def attack_post(request, attacker, whom):
-    ctx ={}
-    if request.POST:
-        ctx['rlt'] = [attacker, whom, request.POST['key'], request.POST['text'], request.POST['choice']]
-    return render(request, "group/detail.html", ctx)
+    output = '';
+    atk=Attack(attacker=attacker, whom=whom, atype=request.POST['choice'], text=request.POST['text'], key=request.POST['key'], output=output)
+    atk.save()
+    return render(request, "attack/detail.html", {'attack' : atk})
