@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'group',
     'mainpage',
     'mainpage.templatetags',
+    'attack',
 ]
 
 

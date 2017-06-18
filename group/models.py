@@ -7,7 +7,7 @@ from django.db import models
 
 class Group(models.Model):
     gid = models.CharField(max_length=10, blank=False, unique=True)
-    cipher = models.TextField(max_length=255, blank=False, default='Nonparticipator')
+    cipher = models.TextField(blank=False, default='Nonparticipator')
 
     def __unicode__(self):
             return self.gid
