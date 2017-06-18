@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="header">
+	<h1> Group{{ group.number }} </h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+	<h2 class="content-subhead"> Cipher Text</h2>
+	<p>{{ group.cipher }}</p>
+</div>
+{% endblock %}

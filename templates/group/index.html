@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="header">
+	<h1> Ve475 Introduction to Cryptography </h1>
+	<h2> SU2017 Challenge 2 </h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    {% for group in group_list %}
+        <h2 class="content-subhead"> Group{{ group.number }} </h2>
+	<p> <a href="{% url 'group-detail' group_number=group.number%}" alt="go"> <strong>Attack!</strong></p>
+    {% endfor %}
+</div>
+{% endblock %}
