@@ -6,9 +6,9 @@ from django.db import models
 # Create your models here.
 
 class Group(models.Model):
-    number = models.PositiveIntegerField(blank=False, unique=True)
-    cipher = models.TextField(blank=False, default='Nonparticipator')
+    gid = models.CharField(max_length=10, blank=False, unique=True)
+    cipher = models.TextField(max_length=255, blank=False, default='Nonparticipator')
 
     def __unicode__(self):
-            return "%d"%self.number
+            return self.gid
 

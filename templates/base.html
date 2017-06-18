@@ -1,53 +1,72 @@
-<!doctype html>
-<html lang="en">
-<head>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SJTU UM-JI Ve475 SU2017 Challenge2 Online">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="SJTU UM-JI Ve475 SU2017 Challenge2 Online">
+    <meta name="author" content="Wu Hao">
+    <link rel="icon" href="../../favicon.ico">
 
     <title>VE475 SU2017 C2</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="WuHao">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-    <link rel="stylesheet" href="https://purecss.io/css/layouts/side-menu.css"> 
-</head>
-<body>
 
-<div id="layout">
-    <!-- Menu toggle -->
-    <a href="#menu" id="menuLink" class="menu-link">
-        <!-- Hamburger icon -->
-        <span></span>
-    </a>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <div id="menu">
-        <div class="pure-menu">
-            <a class="pure-menu-heading" href="{% url 'index' %}">Ve475 C2</a>
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"> <a href="{% url 'group-index' %}" class="pure-menu-link">Attack</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">History</a></li>
-                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="#" class="pure-menu-link">Results</a>
-                </li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
-            </ul>
+
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+
+    <link href="starter-template.css" rel="stylesheet">
+
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'index' %}">Ve475 C2</a>
         </div>
-    </div>
-
-    <div id="main">
-        <div>
-            {% block header %}
-	    {% endblock %}
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attack <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'group-detail' gid='0'%}">Group0</a></li>
+                <li><a href="{% url 'group-detail' gid='1'%}">Group1</a></li>
+              </ul>
+            </li>
+            <li><a href="#about">History</a></li>
+            <li><a href="#contact">Result</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+<br><br><br><br>
+    {% block container %}
+	{% endblock %}
 
-        <div>
-            {% block content %}
-	    {% endblock %}
-        </div>
-    </div>
 
-</div>
-
-<script src="https://purecss.io/combo/1.18.13?/js/menus.js&/js/ui.js&/js/rainbow/rainbow.min.js&/js/rainbow/language/generic.js&/js/rainbow/language/html.js&/js/rainbow/language/css.js&/js/rainbow/language/javascript.js&/js/rainbow/language/shell.js"></script>
-
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
+

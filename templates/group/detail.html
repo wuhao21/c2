@@ -1,14 +1,68 @@
 {% extends "base.html" %}
 
-{% block header %}
-<div class="header">
-	<h1> Group{{ group.number }} </h1>
-</div>
-{% endblock %}
+{% block container %}
+<div class="container" role="main">
+	<div class="page-header">
+		<h1>Group{{group.gid}}</h1>
+	</div>
+    <div class="panel panel-primary">
+		<div class="panel-heading">
+		<h3 class="panel-title">Cipher Text</h3>
+		</div>
+        <div class="panel-body" style="word-break:break-all; word-wrap:break-all">
+            {{group.cipher}}
+        </div>
+    </div>
 
-{% block content %}
-<div class="content">
-	<h2 class="content-subhead"> Cipher Text</h2>
-	<p>{{ group.cipher }}</p>
+	<div class="page-header">
+		<h1>Encryption</h1>
+	</div>
+
+	<div class="row">
+	  <div class="col-lg-5">
+		<div class="input-group">
+		  <span class="input-group-btn">
+		    <button class="btn btn-default" type="button">Go!</button>
+		  </span>
+		  <input type="text" class="form-control" placeholder="PlainText...">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-5 -->
+	  <div class="col-lg-3">
+		<div class="input-group">
+			<span class="input-group-addon" id="sizing-addon1">Key</span>
+		  <input type="text" class="form-control" placeholder="">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-3 -->
+	</div><!-- /.row -->
+	<div class="well">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+    </div>
+
+	<div class="page-header">
+		<h1>Decryption</h1>
+	</div>
+
+	<div class="row">
+	  <div class="col-lg-5">
+		<div class="input-group">
+		  <span class="input-group-btn">
+		    <button class="btn btn-default" type="button">Go!</button>
+		  </span>
+		  <input type="text" class="form-control" placeholder="CipherText...">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-5 -->
+	  <div class="col-lg-3">
+		<div class="input-group">
+			<span class="input-group-addon" id="sizing-addon1">Key</span>
+		  <input type="text" class="form-control" placeholder="">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-3 -->
+	</div><!-- /.row -->
+	<div class="well">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+    </div>
 </div>
+
+
+
 {% endblock %}

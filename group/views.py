@@ -7,13 +7,9 @@ from group.models import Group
 
 # Create your views here.
 
-def index(request):
-    group_list = Group.objects.all()
-    return render(request, 'group/index.html', {'group_list' : group_list})
-
-def detail(request, group_number):
+def detail(request, gid):
     try:
-        group = Group.objects.get(number=group_number)
+        group = Group.objects.get(gid=gid)
     except Group.DoesNotExist:
         raise Http404
     return render(request, 'group/detail.html', {'group' : group})
