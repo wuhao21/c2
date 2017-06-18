@@ -10,9 +10,9 @@ class Attack(models.Model):
     whom = models.CharField(max_length=20, blank=True)
     atype = models.CharField(max_length=10, blank=True)
     date_time = models.DateTimeField(auto_now_add = True)
-    text = models.TextField(blank = True, null = True)
-    result = models.TextField(blank = True, null = True)
-    key = models.TextField(blank = True, null = True)
+    text = models.TextField(blank = True, default='NONE')
+    result = models.TextField(blank = True, default='NONE')
+    key = models.TextField(blank = True, default='NONE')
     def __unicode__(self) :
-        return self.id
+        return "%d"%self.id
 
