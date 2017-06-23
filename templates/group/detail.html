@@ -25,7 +25,7 @@
 		<h1>Attack</h1>
 	</div>
 
-    <form action="{% url 'attack-post' group.gid%}" method="post">
+    <form action="{% url 'attack-post' group.gid %}" method="post">
         {% csrf_token %}
         <div class="form-group">
             <label for="name">Key</label>

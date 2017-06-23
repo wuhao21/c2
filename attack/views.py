@@ -20,6 +20,7 @@ def detail(request, aid):
     except Attack.DoesNotExist:
         raise Http404
     return render(request, 'attack/detail.html', {'attack' : atk, 'username' : username})
+
 def attack_post(request, whom):
     try:
         username = request.session['who']
@@ -35,4 +36,13 @@ def attack_post(request, whom):
         res = 'NONE'
     atk=Attack(attacker=request.session['who'], whom=whom, atype=request.POST['choice'], text=request.POST['text'], key=request.POST['key'], output=output, result=res)
     atk.save()
-    return render(request, "attack/detail.html", {'attack' : atk, 'username' : username})
+    return render(request, 'attack/detail.html', {'attack' : atk, 'username' : username})
+
+def history(request):
+    try:
+        username = request.session['who']
+    except KeyError:
+        return render(request, 'index.html' , {'content': content, 'status': 'old', 'username':''})
+    atklist = Attack.objects.filter(attacker=username)
+    return render(request, 'attack/history.html', {'atklist' : atklist, 'username' : username})
+

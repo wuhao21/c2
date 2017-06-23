@@ -47,8 +47,8 @@
                 <li><a href="{% url 'group-detail' gid='1'%}">Group1</a></li>
               </ul>
             </li>
-            <li><a href="#about">History</a></li>
-            <li><a href="#contact">Result</a></li>
+            <li><a href="{% url 'history' %}">History</a></li>
+            <li><a href="#result">Result</a></li>
           </ul>
             {% block rightnav %}
             {% endblock %}
