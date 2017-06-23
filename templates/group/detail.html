@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block rightnav %}
+
+{% endblock %}
+
 {% block container %}
 <div class="container" role="main">
 	<div class="page-header">
@@ -25,11 +29,15 @@
             <input type=text class="form-control" name=key></input>
             <label for="name">Text</label>
             <input type=text class="form-control" name=text></input>
+            <input type="hidden" name='cipher' value={{ group.cipher }}>
             <label class="checkbox-inline">
                 <input type="radio" name="choice" id="choice1" value="encryption" checked>Encryption
             </label>
             <label class="checkbox-inline">
                 <input type="radio" name="choice" id="choice2" value="decryption">Decryption
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="choice" id="choice3" value="try">Try to break the cipher!
             </label>
             <button type="submit" name=submit class="btn btn-default">Submit</button>
         </div>

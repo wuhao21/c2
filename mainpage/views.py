@@ -12,5 +12,5 @@ def index(request):
         index = MainPage.objects.get(title = 'SU2016')
     except MainPage.DoesNotExist:
         raise Http404
-    return render(request, 'mainpage/index.html', {'page' : index})
+    return render(request, 'mainpage/index.html', {'page' : index, 'status' : 'new', 'username': ''})
 

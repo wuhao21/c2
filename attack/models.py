@@ -13,6 +13,7 @@ class Attack(models.Model):
     text = models.TextField(blank = True, default='NONE')
     output = models.TextField(blank = True, default='NONE')
     key = models.TextField(blank = True, default='NONE')
+    result = models.CharField(max_length=20, blank = False, default='NONE')
     def __unicode__(self) :
         return "%d"%self.id
 

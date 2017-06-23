@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 
+{% block rightnav %}
+
+{% endblock %}
+
 {% block container %}
+
+{% ifequal attack.result 'success'%}
+    <div class="alert alert-success" role="alert"><strong>Well done!</strong> You successfully break the cipher.</div>
+{% endifequal %}
+
+{% ifequal attack.result 'fail' %}
+    <div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Please try again latter.</div>
+{% endifequal %}
+
 <div class="container" role="main">
     
 	<div class="page-header">

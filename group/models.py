@@ -10,5 +10,5 @@ class Group(models.Model):
     cipher = models.TextField(blank=False, default='Nonparticipator')
 
     def __unicode__(self):
-            return self.gid
+            return 'group%s'%self.gid
 

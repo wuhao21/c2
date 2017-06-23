@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
+    url(r'^online/', include('online.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^group/', include('group.urls')),
     url(r'^attack/', include('attack.urls')),
-    url(r'^', include('mainpage.urls')),
+    url(r'^', views.index, name='index'),
 ]
