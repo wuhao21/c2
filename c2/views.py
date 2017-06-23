@@ -7,5 +7,5 @@ f = open('indexmd.txt')
 content = f.read()
 
 def index(request):
-	return render(request, 'index.html', {'content':content, 'status' : 'new', 'username': ''})
+    return render(request, 'index.html', {'content':content, 'status' : 'new', 'username': ''})
 

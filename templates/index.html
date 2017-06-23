@@ -21,6 +21,9 @@
 	{% ifequal status 'wrong'%}
 		<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Please try again latter.</div>
 	{% endifequal %}
+	{% ifequal status 'old'%}
+		<div class="alert alert-warning" role="alert">Please login first.</div>
+	{% endifequal %}
 	<div class="jumbotron">
 		
 	    <h1>Ve475 Introduction to Cryptography</h1>

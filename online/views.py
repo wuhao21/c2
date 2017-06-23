@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import os
+
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from django import forms
 from online.models import User
+import os
 f = open('indexmd.txt')
 content = f.read()
 
@@ -23,7 +24,7 @@ def login(req):
 #comparison
             user = User.objects.filter(username__exact = username,password__exact = password)
             if user:
-                req.session['onlineuser'] = username
+                req.session['who'] = username
                 return render(req, 'index.html' , {'content': content, 'status': 'in', 'username': username})
             else:
                 return render(req, 'index.html' , {'content': content, 'status': 'wrong', 'username':''})

@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block rightnav %}
-
+<ul class="nav navbar-nav navbar-right">
+	<li><a href="#me">{{ username }}</a></li>
+	<li><a href="{% url 'logout'%}">Logout</a></li>
+</ul>
 {% endblock %}
 
 {% block container %}
