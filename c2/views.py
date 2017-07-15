@@ -7,5 +7,10 @@ f = open('indexmd.txt')
 content = f.read()
 
 def index(request):
-    return render(request, 'index.html', {'content':content, 'status' : 'new', 'username': ''})
+    try:
+        username = request.session['who']
+    except KeyError:
+        return render(request, 'index.html' , {'content': content, 'status': 'new', 'username':''})
+    return render(request, 'index.html', {'content':content, 'status' : 'in', 'username': username})
+
 

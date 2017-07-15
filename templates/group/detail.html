@@ -34,10 +34,10 @@
             <input type=text class="form-control" name=text></input>
             <input type="hidden" name='cipher' value={{ group.cipher }}>
             <label class="checkbox-inline">
-                <input type="radio" name="choice" id="choice1" value="encryption" checked>Encryption
+                <input type="radio" name="choice" id="choice1" value="encrypt" checked>Encryption
             </label>
             <label class="checkbox-inline">
-                <input type="radio" name="choice" id="choice2" value="decryption">Decryption
+                <input type="radio" name="choice" id="choice2" value="decrypt">Decryption
             </label>
             <label class="checkbox-inline">
                 <input type="radio" name="choice" id="choice3" value="try">Try to break the cipher!
@@ -45,6 +45,11 @@
             <button type="submit" name=submit class="btn btn-default">Submit</button>
         </div>
     </form>
+    
+  	<div class="page-header">
+		<h1>Key Generation</h1>
+		<a href="{%url 'group-generate' group.gid%}"> GO </a>
+	</div>
 </div>
 
 

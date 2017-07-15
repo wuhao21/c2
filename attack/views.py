@@ -26,7 +26,18 @@ def attack_post(request, whom):
         username = request.session['who']
     except KeyError:
         return render(request, 'index.html' , {'content': content, 'status': 'old', 'username':''})
-    output = '';
+
+    op = request.POST['choice'];
+    if op == 'try': op = 'encrypt'
+    key = request.POST['key'];
+
+    if key == '':
+        temp_file = os.popen("./%s/c2 --%s %s"%(whom, op, request.POST['text']))
+    else:
+        temp_file = os.popen("./%s/c2 --%s %s --key %s"%(whom, op, request.POST['text'], key))
+    output = temp_file.read()
+    temp_file.close()
+
     if request.POST ['choice'] == 'try':
         if request.POST['cipher'] == output:
             res = 'success'
