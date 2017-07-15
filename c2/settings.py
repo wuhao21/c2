@@ -25,7 +25,7 @@ SECRET_KEY = 'cjlv)(zcu5nhn0pc(6rq!^!!2-ko7$auzo!-0^s662lhri^z^)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.238.131']
+ALLOWED_HOSTS = ['192.168.238.131','127.0.0.1']
 
 
 # Application definition
@@ -131,3 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/hao/c2/static'
