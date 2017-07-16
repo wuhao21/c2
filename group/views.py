@@ -20,7 +20,7 @@ def generate(request, gid):
         group = Group.objects.get(gid=gid)
     except Group.DoesNotExist:
         raise Http404
-    temp_file = os.popen("./%s/c2 --generate"%gid)
+    temp_file = os.popen("data/%s/c2 --generate"%gid)
     key = temp_file.read()
     temp_file.close()
     return HttpResponse(key)

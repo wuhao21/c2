@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block rightnav %}
+<ul class="nav navbar-nav navbar-right">
+	<li><a href="#me">{{ username }}</a></li>
+	<li><a href="{% url 'logout'%}">Logout</a></li>
+</ul>
+{% endblock %}
+
+{% block container %}
+<div class="container" role="main">
+<div class="panel panel-default">
+  <div class="panel-heading">Group List</div>
+  <div class="panel-body">
+    <p>Have Fun :)</p>
+  </div>
+
+  <table class="table table-striped">
+	<tr>
+    	<th>Group #</th>
+    	<th>Cipher 1</th>
+    	<th>Cipher 2</th>
+    	<th>Cipher 3</th>
+	</tr>
+  	<tr>
+    	<td>1</td>
+    	<td><a class="btn btn-danger" href="#">1-1</a></td>
+    	<td>-</td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>2</td>
+    	<td><a class="btn btn-success" href="{% url 'group-detail' gid='2-1'%}">2-1</a></td>
+    	<td><a class="btn btn-success" href="{% url 'group-detail' gid='2-2'%}">2-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>3</td>
+    	<td><a class="btn btn-danger" href="#">3-1</a></td>
+    	<td><a class="btn btn-danger" href="#">3-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>4</td>
+    	<td><a class="btn btn-danger" href="#">4-1</a></td>
+    	<td><a class="btn btn-danger" href="#">4-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>5</td>
+    	<td><a class="btn btn-danger" href="#">5-1</a></td>
+    	<td><a class="btn btn-danger" href="#">5-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>6</td>
+    	<td><a class="btn btn-danger" href="#">6-1</a></td>
+    	<td><a class="btn btn-danger" href="#">6-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>7</td>
+    	<td><a class="btn btn-danger" href="#">7-1</a></td>
+    	<td><a class="btn btn-danger" href="#">7-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>8</td>
+    	<td><a class="btn btn-danger" href="#">8-1</a></td>
+    	<td><a class="btn btn-danger" href="#">8-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>9</td>
+    	<td><a class="btn btn-danger" href="#">9-1</a></td>
+    	<td><a class="btn btn-danger" href="#">9-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>10</td>
+    	<td><a class="btn btn-danger" href="#">10-1</a></td>
+    	<td><a class="btn btn-danger" href="#">10-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>11</td>
+    	<td><a class="btn btn-danger" href="#">11-1</a></td>
+    	<td>-</td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>12</td>
+    	<td><a class="btn btn-danger" href="#">12-1</a></td>
+    	<td><a class="btn btn-danger" href="#">12-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>13</td>
+    	<td><a class="btn btn-danger" href="#">13-1</a></td>
+    	<td><a class="btn btn-danger" href="#">13-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>14</td>
+    	<td><a class="btn btn-danger" href="#">14-1</a></td>
+    	<td><a class="btn btn-danger" href="#">14-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>15</td>
+    	<td><a class="btn btn-danger" href="#">15-1</a></td>
+    	<td><a class="btn btn-danger" href="#">15-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>16</td>
+    	<td><a class="btn btn-danger" href="#">16-1</a></td>
+    	<td>-</td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>17</td>
+    	<td><a class="btn btn-danger" href="#">17-1</a></td>
+    	<td><a class="btn btn-danger" href="#">17-2</a></td>
+    	<td><a class="btn btn-danger" href="#">17-3</a></td>
+  	</tr>
+  	<tr>
+    	<td>18</td>
+    	<td><a class="btn btn-danger" href="#">18-1</a></td>
+    	<td><a class="btn btn-danger" href="#">18-2</a></td>
+    	<td><a class="btn btn-danger" href="#">18-3</a></td>
+  	</tr>
+  	<tr>
+    	<td>19</td>
+    	<td><a class="btn btn-danger" href="#">19-1</a></td>
+    	<td><a class="btn btn-danger" href="#">19-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>20</td>
+    	<td><a class="btn btn-danger" href="#">20-1</a></td>
+    	<td><a class="btn btn-danger" href="#">20-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	<tr>
+    	<td>21</td>
+    	<td><a class="btn btn-danger" href="#">21-1</a></td>
+    	<td><a class="btn btn-danger" href="#">21-2</a></td>
+    	<td>-</td>
+  	</tr>
+  	
+  </table>
+</div>
+</div>
+
+{% endblock %}
