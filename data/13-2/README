@@ -1,0 +1,21 @@
+The cipher is based on AES and a simple character transform. The key size is 128 bits.
+
+Inputs: inputs from the command line arguments
+  
+   --generate 
+    The program will randomly generate an 128-bit key from the characters in the provided alphabet. The generated key will be an output on screen.
+  
+  -- key "mykey"
+    Input a specific key for encryption or decryption.
+  
+  --encrypt "plaintext"
+    The program will encrypt the plaintext using the input key, or a generated key if no key inputs. Then output the encryption result on screen.
+
+  --decrypt "ciphertext"
+    The program will decrypt the ciphertext using the input key, or a generated key if no key inputs. Then output the decryption result on screen.
+
+Important Notes when using the cipher:
+1. The ciphertext should have a length of 32k bits, where k is a positive integer; And it only consists of characters A to P. If an input ciphertext has a wrong length or has other characters, the program will output "Invalid ciphertext!". The reason is that the ciphertext is simply transformed from hexidemal numbers with the map '0'-'9' to 'G'-'Z' and 'A'-'F' not change.
+2. The plaintext can be any length. The program will add 0x00 to construct the blocks for AES.
+3. If the input mykey is longer than 128 bits, the program will only use the first 128 bits. If it is shorter than 128 bits, the program will add 0s to make it have 128 bits.
+4. If the inputs have both generate and key, the program will first output a generated key and then use the specific given key to do the encryption or decryption.

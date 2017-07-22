@@ -1,0 +1,15 @@
+Group: 8 - Challenge 2 - Implement 1
+Shuoyang Cui 5133709173
+Xiangru Qian: 5143709210
+
+It is the implementation of Columnar transposition. Points: 3
+
+Compile: make
+encryption:
+	./c2 --encrypt "”mysecretmessage”"
+decryption:
+	./c2 --decrypt "12345"
+generate
+	./c2 --generate
+user key
+	./c2 --encrypt ”mysecretmessage” --key ”mysecretkey”

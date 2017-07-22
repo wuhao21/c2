@@ -1,0 +1,57 @@
+This is the Tiny Encryption Algorithm (TEA), which  is a block cipher notable for its simplicity of description and implementation, typically a few lines of code. Here is a link to the introduction of the cipher: https://link.springer.com/chapter/10.1007/3-540-60590-8_29.
+
+The key is just a ranodm number has 128 bits long.
+hence input key is string has 32 characters (0-9 and a-f Hexadecimal)
+
+If you random select the ciphertext input, it will likely cannot be decrypt to the useful message.
+
+Here I can give a qustion, which can determine whether someone break it.
+key=6d6371e72336dcd0590a2f29de5a6f6e(random)
+plaintext=Congratulationstoyouonyoursuccess.
+ciphertext=VllBab,kSTmYP.z7,,3,207ONRDsX58,P85eFTScTIAwY28RR6a9aQ
+
+
+Follow our challenge principle, I need to generate a table to translate a-z,A-Z,0-9 and some punctuations into corresponding numbers.
+0	A	16	Q	32	g	48	w
+1	B	17	R	33	h	49	x
+2	C	18	S	34	i	50	y
+3	D	19	T	35	j	51	z
+4	E	20	U	36	k	52	0
+5	F	21	V	37	l	53	1
+6	G	22	W	38	m	54	2
+7	H	23	X	39	n	55	3
+8	I	24	Y	40	o	56	4
+9	J	25	Z	41	p	57	5
+10	K	26	a	42	q	58	6
+11	L	27	b	43	r	59	7
+12	M	28	c	44	s	60	8
+13	N	29	d	45	t	61	9
+14	O	30	e	46	u	62	,
+15	P	31	f	47	v	63	.(only two punctuations, others will have no chenge)
+64=2^6  6bits 
+
+
+Since the TEA has the 64 bits block size, we add 00 before it. Then we have 256=2^8 8 bits long number.
+For example:
+R=(00010001)2
+
+If the input plaintext length cannot be divided by 8, add ones after its corresponding input.
+For example:
+Ihaveadream.(lenth:12)
+[8,33,26,47,30,26,29,59,30,26,38,63]
+m[0]=[8,33,26,47]=[(00001000),(00100001),(00011010),(00101111)]
+m[1]=[30,26,29,43]=，，，，，，
+m[0] and m[1] be the first input group of TEA cipher
+m[2]=[30,26,38,63]=，，，，，，
+m[3]=[(11111111),(11111111),(11111111),(11111111)]
+m[2] and m[3] be the second input group of TEA cipher
+
+The output will print all the imformation after encrpytion. Since we only can tranlate the mutiple lenth of 6 to character, we need to add 0 if the lenth is not long enough.
+For example:
+After encryption, we have c[0] and c[1].
+c[0]=[(10101001),(11011001),(10100001),(00100111)] 
+c[1]=[(11100001),(01010111),(01100001),(11110010)]
+then the correspoding character is [(101010),(011101),(100110),...,(011111),(0010)]
+The last one (0010)=(001000) (The decryption part we can find the nearst number, which is the mutiple number of 64, to remove the zeros)
+
+When decrypt the random ciphertext, 8 bit long number is larger than 63 and does not equal to 255, we cannot get the accoressponding pliantext.

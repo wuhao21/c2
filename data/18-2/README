@@ -1,0 +1,6 @@
+This is the The half quartet encryption,
+the input should be :./c2 --decrypt "CBJHACSGFTb" --key "APPLEBANANA" for decrypt and 
+./c2 --encrypt "fangdashisb" --key "APPLEBANANA" for encrypt.
+There are two keys which should be capitalize english words.
+The plaintext should be capitalize.
+ciphertext: BLOJESXYTSBMTVJNRJEDCMKZFGMDPWJNRPGZPPFGOJKUTEUN
