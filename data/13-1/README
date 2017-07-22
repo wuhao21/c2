@@ -5,12 +5,6 @@ hence input key is string has 32 characters (0-9 and a-f Hexadecimal)
 
 If you random select the ciphertext input, it will likely cannot be decrypt to the useful message.
 
-Here I can give a qustion, which can determine whether someone break it.
-key=6d6371e72336dcd0590a2f29de5a6f6e(random)
-plaintext=Congratulationstoyouonyoursuccess.
-ciphertext=VllBab,kSTmYP.z7,,3,207ONRDsX58,P85eFTScTIAwY28RR6a9aQ
-
-
 Follow our challenge principle, I need to generate a table to translate a-z,A-Z,0-9 and some punctuations into corresponding numbers.
 0	A	16	Q	32	g	48	w
 1	B	17	R	33	h	49	x
