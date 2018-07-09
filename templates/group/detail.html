@@ -1,62 +1,101 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block rightnav %}
 <ul class="nav navbar-nav navbar-right">
-	<li><a href="#me">{{ username }}</a></li>
-	<li><a href="{% url 'logout'%}">Logout</a></li>
+    <li><a href="#me">{{ username }}</a></li>
+    <li><a href="{% url 'logout'%}">Logout!</a></li>
 </ul>
 {% endblock %}
 
 {% block container %}
 <div class="container" role="main">
-	<div class="page-header">
-		<h1>Group{{group.gid}}</h1>
-	</div>
-    <div class="panel panel-primary">
-		<div class="panel-heading">
-		<h3 class="panel-title">Cipher Text</h3>
-		</div>
-        <div class="panel-body" style="word-break:break-all; word-wrap:break-all">
-            {{group.cipher}}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Group {{group.gid}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cipher Text</h3>
+                </div>
+                <div class="panel-body" style="word-break:break-all; word-wrap:break-all">
+                    {{group.cipher}}
+                </div>
+            </div>
         </div>
     </div>
 
-	<div class="page-header">
-		<h1>Attack</h1>
-	</div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>CPCA Attack</h1>
+            <a class="btn btn-success btn-lg" href="{%url 'group-generate' group.gid%}"> Generate Key </a>
+            <br>
+            <p>{{key}}</p>
+            <br>
+            <form action="{% url 'attack-cpca' group.gid %}" method="post" role="form">
+                {% csrf_token %}
 
-    <form action="{% url 'attack-post' group.gid %}" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="name">Key</label>
-            <input type=text class="form-control" name=key></input>
-            <label for="name">Text</label>
-            <input type=text class="form-control" name=text></input>
-            <input type="hidden" name='cipher' value={{ group.cipher }}>
-            <label class="checkbox-inline">
-                <input type="radio" name="choice" id="choice1" value="encrypt" checked>Encryption
-            </label>
-            <label class="checkbox-inline">
-                <input type="radio" name="choice" id="choice2" value="decrypt">Decryption
-            </label>
-            <label class="checkbox-inline">
-                <input type="radio" name="choice" id="choice3" value="try">Try to break the cipher!
-            </label>
-            <button type="submit" name=submit class="btn btn-default">Submit</button>
+                <div class="form-group">
+                    <label for="name">Key</label>
+                    <input type=text class="form-control" name=key
+                           placeholder="If not specified, using default key"> </input>
+                    <label for="name">Text</label>
+                    <input type=text class="form-control" name=text> </input>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="choice" id="choice1" value="encrypt" checked>Encryption
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="choice" id="choice2" value="decrypt">Decryption
+                        </label>
+                    </div>
+                    <br>
+                    <button type="submit" name=submit class="btn btn-success btn-lg">Go</button>
+                </div>
+            </form>
         </div>
-    </form>
-    
-  	<div class="page-header">
-		<h1>Key Generation</h1>
-		<a href="{%url 'group-generate' group.gid%}"> GO </a>
-	</div>
+    </div>
 
-  	<div class="page-header">
-		<h1>README</h1>
-		<a href="{%url 'group-readme' group.gid%}"> GO </a>
-	</div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color:#FFA500">
+                    <h3 class="panel-title">Result</h3>
+                </div>
+                <div class="panel-body" style="word-break:break-all; word-wrap:break-all">
+                    {{result}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="page-header">-->
+    <!--<h1>README</h1>-->
+    <!--<a href="{%url 'group-readme' group.gid%}"> GO </a>-->
+    <!--</div>-->
+    <div class="row row-content align-items-center">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>I think the plaintext is....</h1>
+            <img src="{% static 'img/thinking.png'%}">
+            <form role="form" action="{% url 'attack-post' group.gid %}" method="POST">
+                <div class="form-group">
+                    <input type=text class="form-control" name=plaintext></input>
+                    <br>
+                    <button type="submit" name=try class="btn btn-success btn-lg">Try!</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <a class="btn btn-danger btn lg" href="{% url 'attack-list'%}">Back To Cipher List!</a>
+        </div>
+    </div>
 </div>
-
 
 
 {% endblock %}

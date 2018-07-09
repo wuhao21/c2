@@ -19,7 +19,7 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^online/', include('online.urls')),
+    url(r'^login/', include('login.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^group/', include('group.urls')),
     url(r'^attack/', include('attack.urls')),

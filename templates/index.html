@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-{% load custom_markdown %}
+{% load static %}
+{% load tz %}
 
 {% block rightnav %}
 <ul class="nav navbar-nav navbar-right">
-	{% ifequal status "in"	 %}
-	<li><a href="#me">{{ username }}</a></li>
-	<li><a href="{% url 'logout'%}">Logout</a></li>
-	{% else %}
-	<li><a href="#me">Guest</a></li>
-	<li><a href="{% url 'login'%}">Login</a></li>
-	{% endifequal %}
+    {% ifequal status "in" %}
+    <li><a href="#me">{{ username }}</a></li>
+    <li><a href="{% url 'logout'%}">Logout!</a></li>
+    {% else %}
+    <li><a href="#me">Guest</a></li>
+    <li><a href="{% url 'login'%}">Login!</a></li>
+    {% endifequal %}
+
 </ul>
 {% endblock %}
 
@@ -18,20 +20,36 @@
 {% block container %}
 
 <div class="container theme-showcase" role="main">
-	{% ifequal status 'wrong'%}
-		<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Please try again latter.</div>
-	{% endifequal %}
-	{% ifequal status 'old'%}
-		<div class="alert alert-warning" role="alert">Please login first.</div>
-	{% endifequal %}
-	<div class="jumbotron">
-		
-	    <h1>Ve475 Introduction to Cryptography</h1>
-    	<p>SU2017 Challenge 2</p>
-	  </div>
-	<p>
-		{{ content | custom_markdown }}
-    </p>
+    {% ifequal status 'wrong'%}
+    <div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Please try again latter.</div>
+    {% endifequal %}
+    {% ifequal status 'old'%}
+    <div class="alert alert-warning" role="alert">Please login first.</div>
+    {% endifequal %}
+    <div class="jumbotron">
+
+        <h2 class="text-center">Ve475 Introduction to Cryptography</h2>
+        <p class="text-center">SU2018 Challenge 2</p>
+    </div>
+    <div class="row row-content align-items-center">
+        <div class="col-4 col-sm col-md">
+            <h3 class="text-center">This site is for Phase 2 in VE475 SU2018 Challenge 2</h3>
+            <h4 class="text-center">Timeline for Phase 2: </h4>
+            <h3 class="text-center">July 6th ~ July 18th, 23:59</h3>
+            <h4 class="text-center" style="color:green"> The attack is open. Please Log in and start the attack. Have
+                fun! </h4>
+            <div class="col-md-offset-5">
+                <img alt="" src="{% static 'img/happy.png'%}" style="text-align:center;">
+            </div>
+            <h4 class="text-center">For more details in C2 please see
+                <a href="{% static 'file/c2.pdf' %}"> Challenge2 Description SU2018 </a>
+            </h4>
+
+
+        </div>
+    </div>
+
+
 </div>
 
 {% endblock %}
