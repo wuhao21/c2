@@ -133,5 +133,23 @@ Student could get control of the server.
 
 ## Improvement in the future
 
+1. Upgrade the django into 2.x.x
+2. Setting the site into https for the sake of security
+3. Decoupling of front end and back end
+4. The admin site should be improved and made easier to use
+
 ## Contributors and Update Log
+
+2017 Summer: Site written by Wu Hao
+
+---
+2018 Summer: Improvement by Zhu Chen
+
+* Fixed the bug that everyone could input ciphertext to break the cipher
+* Created the leaderboard section
+* Fixed the security issue
+* Change the appearance of the website
+* Created this document
+
+---
 
