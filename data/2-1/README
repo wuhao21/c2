@@ -1,3 +1,3 @@
-This encryption is AES encryption that we have been taught in class. We take a string as input and generate an output. Since the process should be known to all, we don't describe it here.
-
-Completed by Wu Chengang and Ding Kaili
+The detailed info about blowfish cipher can be found here:
+	https://en.wikipedia.org/wiki/Blowfish_(cipher)
+	https://www.schneier.com/academic/blowfish/

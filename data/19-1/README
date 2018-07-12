@@ -1,7 +1,0 @@
-This is a program based on the Playfair cipher, the plaintext,key and cipher text should be string composed of capital letter. 
-The description: https://en.wikipedia.org/wiki/Playfair_cipher
-command --generate will generate a key with length 26
-when encrypting or decrypting, please input the key or generate one, otherwise the program will report an error.
-This cipher will add X into two same adjacent letters and at last if the letter numer is odd, and it takes I and J as the same letter, therefore, X and I, J in the decrpted ciphertext should be judged accordingly.
-
-
