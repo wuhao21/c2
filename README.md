@@ -140,7 +140,7 @@ Student could get control of the server.
 
 ## Contributors and Update Log
 
-2017 Summer: Site written by Wu Hao
+2017 Summer: Site written by [Wu Hao](https://github.com/wuhao21)
 
 ---
 2018 Summer: Improvement by Zhu Chen
@@ -152,4 +152,3 @@ Student could get control of the server.
 * Created this document
 
 ---
-
