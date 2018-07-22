@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 import os
-f = open('indexmd.txt')
+f = open('index.md')
 content = f.read()
 
 def index(request):

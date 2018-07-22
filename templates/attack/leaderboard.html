@@ -11,25 +11,19 @@
 
 <div class="container" role="main">
 	<div class="page-header">
-		<h1>Attack History</h1>
+		<h1>Leaderboard</h1>
 	</div>
 	<div class="panel panel-default">
 	  <table class="table">
 		  <tr>
 		    <th>#</th>
-		    <th>Whom</th>
-		    <th>When</th>
-		    <th>Type</th>
-		    <th>Result</th>
+		    <th>Score</th>
 		  </tr>
 		</thead>
-	  	{% for atk in atklist%}
+	  	{% for user in userlist%}
 		<tr>
-		    <td><a href="{%url 'attack-detail' atk.id%}">{{atk.id}}</td>
-		    <td>{{atk.whom}}</td>
-		    <td>{{atk.date_time}}</td>
-		    <td>{{atk.atype}}</td>
-		    <td>{{atk.result}}</td>
+		    <td>{{user.username}}</td>
+		    <td>{{user.score}}</td>
 		</tr>
 		{% endfor %}
 	  </table>

@@ -23,15 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cjlv)(zcu5nhn0pc(6rq!^!!2-ko7$auzo!-0^s662lhri^z^)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.238.131','127.0.0.1']
+ALLOWED_HOSTS = ['*','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap_admin',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,13 +42,13 @@ INSTALLED_APPS = [
     'group',
     'c2',
     'attack',
-    'online',
+    'login',
 ]
 
 
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'c2',
-        'USER': 'c2server',
-        'PASSWORD': 'c2123',
+        'USER': 'ta',
+        'PASSWORD': '3c5{23dsplm',
         'HOST':'localhost',
         'PORT':'3306',
     }
@@ -131,4 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/hao/c2/static'
+STATIC_ROOT = '~/c2/static'

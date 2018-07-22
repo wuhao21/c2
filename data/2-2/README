@@ -1,6 +1,0 @@
-This is a gost encryption that has not been taught in class. This is  a quite old method of encryption. It takes 64-bit string as input and has a key length of 256 bits. The 8 s-boxes each of which contains 16 kinds of results with 16 kinds of inputs are secret. The 256-bit key is also secret. The key can be broken into 8 sub-keys with the length of 32 bits.
-We divide the input into two equal parts, 32 bits each. In each turn, we  add the right part with one of the sub-keys and get a 32-bit length result. Then we break the 32-bit result into 8 parts, 4 bits long each, and generate 8 new 4-bit long result through s-box. Then we left shift the 32-bit result by 11 bits. This result is set to the new left part. The new right part is the old left part. We repeat such round for 30 times in total and get our cipher text.
-
-Reference to: https://en.wikipedia.org/wiki/GOST_(block_cipher)
-
-Done by Wu Chengang and Ding Kaili

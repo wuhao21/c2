@@ -1,5 +1,0 @@
-This readme is created for c2 in ve475 summer 2017 @JI by Shengjie pan.
-
-The first cipher uses the block cipher with block size equals to one. It generates a random 16-bit number as key and uses first 8 bits as random vector initialization and last 8 bits as the key for caeser cipher. So the encrypted message is the original letter plus the previous letter as well as the key mod 26. The decryption is to deduct the previous coded letter and key and retrieve the original letter. Note that this cipher maps A-Z to A-Z and a-z to a-z.
-
-The second cipher is base64, which changes binary to text. It does not need keys to encrypt and decrypt. https://en.wikipedia.org/wiki/Base64
